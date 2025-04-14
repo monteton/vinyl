@@ -87,18 +87,18 @@
 
         .logo {
             display: flex;
-            align-items: left;
+            align-items: center;
             gap: 15px;
-            /* Убираем margin: 0 auto */
-            margin-right: auto; /* Теперь логотип будет прижиматься к левому краю */
         }
-            .logo {
-            margin-right: 0; /* Убираем лишние отступы */
-        }
+
+        .logo-img {
+            max-width: 50px;
+            max-height: 50px;
+            display: none; /* Сначала скрываем, покажем в мобильной версии */
         }
 
         .logo h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: bold;
         }
 
@@ -133,13 +133,8 @@
             display: none;
             background: none;
             border: none;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            position: absolute;
-            top: 65px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 101;
         }
 
         /* Parallax Banner */
@@ -173,7 +168,7 @@
         }
 
         .layer3 {
-            background-image: url('layer3.png');
+            background-image: url('images/layer3.png');
             z-index: 3;
             transform: translateY(0);
             opacity: 0.5;
@@ -417,12 +412,29 @@
 
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: row;
-                justify-content: center;
+                justify-content: flex-start; /* Логотип прижат к левому краю */
+                padding: 10px 15px;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .logo-img {
+                display: block; /* Показываем логотип в мобильной версии */
+                max-width: 40px;
+                max-height: 40px;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
             }
 
             .mobile-menu-toggle {
                 display: block;
+                margin-left: auto; /* Кнопка меню справа */
             }
 
             nav {
@@ -488,7 +500,12 @@
             }
             
             .logo h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                max-width: 35px;
+                max-height: 35px;
             }
         }
     </style>
@@ -502,8 +519,11 @@
     </div>
 
     <header>
+       
+	
         <div class="container header-container">
             <div class="logo">
+                <img src="logo.png" alt="Vinyl-M Logo" class="logo-img">
                 <h1>Vinyl-<span>M</span></h1>
             </div>
             
