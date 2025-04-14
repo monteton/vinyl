@@ -849,260 +849,100 @@
                     <li><a href="option3.html" data-lang="ru">Спецэффекты</a></li>
                 </ul>
             </div>
-            <!-- Контактная секция -->
-<section class="contact-full" id="contact">
-    <div class="container">
-        <h2 data-lang="en">Contact Us</h2>
-        <h2 data-lang="me" style="display:none">Kontaktirajte nas</h2>
-        <h2 data-lang="ru" style="display:none">Свяжитесь с нами</h2>
-        
-        <div class="contact-grid">
-            <!-- Контактная информация -->
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 data-lang="en">Location</h3>
-                <h3 data-lang="me" style="display:none">Lokacija</h3>
-                <h3 data-lang="ru" style="display:none">Адрес</h3>
-                <p>Budva, Montenegro</p>
-                <a href="https://maps.google.com?q=Budva,+Montenegro" target="_blank" class="map-link" data-lang="en">View on map</a>
-                <a href="https://maps.google.com?q=Budva,+Montenegro" target="_blank" class="map-link" data-lang="me" style="display:none">Pogledajte na mapi</a>
-                <a href="https://maps.google.com?q=Budva,+Montenegro" target="_blank" class="map-link" data-lang="ru" style="display:none">Посмотреть на карте</a>
-            </div>
+             <section id="contact" class="compact-contact">
+        <div class="container">
+            <h2 data-lang="en">Contact Us</h2>
+            <h2 data-lang="me" style="display:none">Kontaktirajte nas</h2>
+            <h2 data-lang="ru" style="display:none">Свяжитесь с нами</h2>
             
-            <!-- Контакты -->
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-phone-alt"></i>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p data-lang="en">Budva, Montenegro</p>
+                        <p data-lang="me" style="display:none">Budva, Crna Gora</p>
+                        <p data-lang="ru" style="display:none">Будва, Черногория</p>
+                    </div>
                 </div>
-                <h3 data-lang="en">Call Us</h3>
-                <h3 data-lang="me" style="display:none">Pozovite nas</h3>
-                <h3 data-lang="ru" style="display:none">Позвоните нам</h3>
-                <p><a href="tel:+38267439100">+382 67 439 100</a></p>
-                <p data-lang="en">Available 24/7</p>
-                <p data-lang="me" style="display:none">Dostupno 24/7</p>
-                <p data-lang="ru" style="display:none">Доступно 24/7</p>
-            </div>
-            
-            <!-- Email -->
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3 data-lang="en">Email</h3>
-                <h3 data-lang="me" style="display:none">Email</h3>
-                <h3 data-lang="ru" style="display:none">Эл. почта</h3>
-                <p><a href="mailto:Vinylmbudva@gmail.com">Vinylmbudva@gmail.com</a></p>
-                <p data-lang="en">Fast response</p>
-                <p data-lang="me" style="display:none">Brzi odgovor</p>
-                <p data-lang="ru" style="display:none">Быстрый ответ</p>
-            </div>
-        </div>
-        
-        <!-- Социальные сети -->
-        <div class="social-section">
-            <h3 data-lang="en">Follow Us</h3>
-            <h3 data-lang="me" style="display:none">Pratite nas</h3>
-            <h3 data-lang="ru" style="display:none">Мы в соцсетях</h3>
-            
-            <div class="social-grid">
-                <a href="https://www.facebook.com/share/198Ar6UoX1/" target="_blank" rel="noopener noreferrer" class="social-card facebook">
-                    <i class="fab fa-facebook-f"></i>
-                    <span>Facebook</span>
-                </a>
                 
-                <a href="https://www.instagram.com/_vinyl_m/" target="_blank" rel="noopener noreferrer" class="social-card instagram">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <a href="tel:+38267439100">+382 67 439 100</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <a href="mailto:Vinylmbudva@gmail.com">Vinylmbudva@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/198Ar6UoX1/" target="_blank" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/_vinyl_m/" target="_blank" class="social-link instagram">
                     <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
                 </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    /* Стили для полной контактной секции */
-    .contact-full {
-        padding: 80px 0;
-        background-color: #f8f8f8;
-        color: #333;
-    }
-    
-    .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin: 40px 0;
-    }
-    
-    .contact-card {
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .contact-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .contact-icon {
-        font-size: 2rem;
-        color: var(--red);
-        margin-bottom: 20px;
-    }
-    
-    .contact-card h3 {
-        margin-bottom: 15px;
-        color: var(--dark-gray);
-    }
-    
-    .contact-card p {
-        margin-bottom: 10px;
-    }
-    
-    .contact-card a {
-        color: var(--dark-gray);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .contact-card a:hover {
-        color: var(--red);
-    }
-    
-    .map-link {
-        display: inline-block;
-        margin-top: 10px;
-        color: var(--red);
-        font-weight: 500;
-    }
-    
-    /* Секция социальных сетей */
-    .social-section {
-        margin-top: 60px;
-        text-align: center;
-    }
-    
-    .social-section h3 {
-        margin-bottom: 30px;
-        color: var(--dark-gray);
-    }
-    
-    .social-grid {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    
-    .social-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 30px;
-        border-radius: 8px;
-        color: white;
-        text-decoration: none;
-        transition: transform 0.3s ease;
-        min-width: 200px;
-    }
-    
-    .social-card:hover {
-        transform: translateY(-5px);
-    }
-    
-    .social-card i {
-        font-size: 1.5rem;
-        margin-right: 10px;
-    }
-    
-    .social-card.facebook {
-        background: linear-gradient(135deg, #1877f2, #0d5fd8);
-    }
-    
-    .social-card.instagram {
-        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    }
-    
-    /* Адаптация для мобильных */
-    @media (max-width: 768px) {
-        .contact-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .social-grid {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .social-card {
-            width: 100%;
-            max-width: 300px;
-        }
-    }
-</style>
-        </div>
-        <div class="copyright">
+    <footer>
+        <div class="container">
             <p>&copy; 2025 Vinyl-M. <span data-lang="en">All rights reserved.</span><span data-lang="me" style="display:none">Sva prava zadržana.</span><span data-lang="ru" style="display:none">Все права защищены.</span></p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('nav');
-
-            mobileMenuToggle.addEventListener('click', function () {
-                nav.classList.toggle('open');
-            });
-
-            // Enhanced parallax effect with increased movement
-            document.addEventListener('scroll', function () {
-                let scrollPosition = window.pageYOffset;
-                document.querySelector('.layer2').style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
-                document.querySelector('.layer3').style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
-            });
-
-            // Initialize language
-            changeLanguage('en');
-        });
-
-        function changeLanguage(lang) {
-            console.log(`Language changed to: ${lang}`);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language switcher functionality
+            const langButtons = document.querySelectorAll('.lang-btn');
             
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+            
+            // Initialize with English
+            changeLanguage('en');
+            
+            // Parallax effect
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                const layer2 = document.querySelector('.layer2');
+                const layer3 = document.querySelector('.layer3');
+                
+                if (layer2) layer2.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+                if (layer3) layer3.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+            });
+        });
+        
+        function changeLanguage(lang) {
             // Update active button
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
-
-            // Update banner title
-            document.getElementById('bannerTitle').style.display = lang === 'en' ? 'block' : 'none';
-            document.getElementById('bannerTitleME').style.display = lang === 'me' ? 'block' : 'none';
-            document.getElementById('bannerTitleRU').style.display = lang === 'ru' ? 'block' : 'none';
-
-            // Update all elements with data-lang attribute
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                if (el.classList.contains('lang-btn')) return;
+            
+            // Show/hide language-specific content
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                if (element.classList.contains('lang-btn')) return;
                 
-                if (el.dataset.lang === lang) {
-                    el.style.display = 'block';
-                } else if (el.hasAttribute('data-lang')) {
-                    el.style.display = 'none';
-                }
-            });
-
-            // Update form placeholders and buttons
-            const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group button');
-            formInputs.forEach(input => {
-                if (input.dataset.lang === lang) {
-                    input.style.display = 'block';
-                } else if (input.hasAttribute('data-lang')) {
-                    input.style.display = 'none';
+                if (element.getAttribute('data-lang') === lang) {
+                    element.style.display = '';
+                } else if (element.hasAttribute('data-lang')) {
+                    element.style.display = 'none';
                 }
             });
         }
