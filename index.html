@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,11 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--black);
             background-color: var(--white);
-            overflow-x: hidden;
         }
 
         .container {
@@ -38,6 +33,39 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 150px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 3px 8px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background-color: var(--red);
+            font-weight: bold;
+        }
+
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         /* Header Styles */
@@ -54,7 +82,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
@@ -63,20 +90,8 @@
             gap: 15px;
         }
 
-        .logo-img {
-            width: 60px;
-            height: 60px;
-        }
-
-        .logo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         .logo h1 {
             font-size: 2rem;
-            white-space: nowrap;
             font-weight: bold;
         }
 
@@ -84,85 +99,42 @@
             color: var(--red);
         }
 
-        .tagline {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            display: none;
-        }
-
-        nav {
-            display: block;
-        }
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 15px;
-            align-items: center;
-            margin: 0;
-            padding: 0;
         }
 
         nav ul li a {
             padding: 10px 15px;
             font-weight: bold;
             color: var(--black);
-            display: block;
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
             color: var(--red);
         }
 
+        nav ul li a.active {
+            color: var(--red);
+        }
+
+        /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--black);
-        }
-
-        
-        /* Переключатель языка */
-        .language-switcher {
-            position: absolute;
-            top: 150px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .lang-btn {
-            background: none;
-            border: none;
-            color: white;
-            padding: 3px 6px;
-            cursor: pointer;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-        }
-
-        .lang-btn.active {
-            background-color: var(--red);
-            font-weight: bold;
-        }
-
-        .lang-btn:hover {
-            background-color: rgba(255, 255, 255, 0.2);
         }
 
         /* Parallax Banner */
         .parallax-banner {
-            position: relative;
-            height: 80vh;
+            height: 70vh;
             overflow: hidden;
+            position: relative;
             margin-top: 0;
         }
 
@@ -173,12 +145,10 @@
             background-size: cover;
             background-position: center;
             will-change: transform;
-            transition: transform 0.1s ease-out;
-            opacity: 0.5;
         }
 
         .layer1 {
-            background-image: url('images/layer1.png');
+            background-image: url('layer1.png');
             z-index: 1;
         }
 
@@ -186,12 +156,14 @@
             background-image: url('images/layer2.png');
             z-index: 2;
             transform: translateY(0);
+            opacity: 0.7;
         }
 
         .layer3 {
             background-image: url('images/layer3.png');
             z-index: 3;
             transform: translateY(0);
+            opacity: 0.5;
         }
 
         .banner-content {
@@ -204,93 +176,27 @@
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
         }
 
         .banner-content h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--red);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn:active {
-            transform: translateY(-1px);
-        }
-
-        .btn::after {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            width: 100%;
-            border-radius: 50px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transition: all 0.4s;
-            background-color: var(--red);
-        }
-
-        .btn:hover::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
-            }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        h2,
-        h3 {
             font-weight: 700;
-            margin-bottom: 30px;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
             text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
         }
 
         /* About Section */
-        .about {
-            background-color: var(--light-gray);
-        }
-
         .about-content {
             display: flex;
             gap: 40px;
@@ -299,19 +205,36 @@
 
         .about-text {
             flex: 1;
-            font-size: 1.1rem;
         }
 
         .about-text p {
-            margin-bottom: 20px;
-            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .about-text strong {
+            font-weight: 700;
+        }
+
+        .feature-list {
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .feature-item i {
+            color: var(--red);
+            margin-top: 3px;
         }
 
         .about-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
@@ -324,223 +247,162 @@
             transform: scale(1.05);
         }
 
-        /* Features */
-        .features {
-            margin-top: 40px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            gap: 15px;
-        }
-
-        .feature-item i {
-            color: var(--red);
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
+        /* Our Work Section */
+        .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             margin-top: 40px;
         }
 
-        .gallery-item {
+        .work-item {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            height: 250px;
+            height: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .gallery-item img {
+        .work-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img {
+        .work-item:hover img {
             transform: scale(1.1);
         }
 
-        .overlay {
+        .work-overlay {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .work-item:hover .work-overlay {
+            transform: translateY(0);
+        }
+
+        .work-overlay h3 {
+            margin-bottom: 10px;
+            color: var(--red);
+        }
+
+        /* Compact Contact Section */
+        .compact-contact {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+        }
+
+        .contact-list {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
             display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px 20px;
+            background: var(--white);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: var(--black);
+            background: var(--red);
             color: var(--white);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .info-item i {
+            border-radius: 50%;
+            margin-right: 15px;
             font-size: 1.2rem;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text a {
+            color: var(--black);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
             color: var(--red);
         }
 
         .social-links {
             display: flex;
+            justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
-        .social-links a {
+        .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: var(--white);
-            color: var(--black);
             border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--red);
             color: var(--white);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            text-decoration: none;
         }
 
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 20px;
+        .social-link:hover {
+            transform: translateY(-3px);
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.9);
+        .facebook {
+            background-color: #1877f2;
         }
 
-        .form-group textarea {
-            height: 150px;
-            resize: none;
+        .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
 
         /* Footer */
         footer {
             background-color: var(--dark-gray);
             color: var(--white);
-            padding: 50px 0 20px;
-            margin-top: 50px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .footer-links h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h4::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--red);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--red);
-        }
-
-        .copyright {
+            padding: 30px 0;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .banner-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-
         @media (max-width: 992px) {
-            .header-container {
-                flex-direction: row;
-                text-align: center;
+            .work-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
+            
+            .banner-content h2 {
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+            }
+
             .mobile-menu-toggle {
                 display: block;
             }
@@ -549,7 +411,6 @@
                 display: none;
                 width: 100%;
                 order: 3;
-                margin-top: 15px;
             }
 
             nav.open {
@@ -558,159 +419,141 @@
 
             nav ul {
                 flex-direction: column;
-                align-items: stretch;
+                margin-top: 15px;
+                gap: 5px;
             }
 
             nav ul li a {
+                display: block;
                 padding: 12px;
-                text-align: center;
                 border-bottom: 1px solid var(--medium-gray);
             }
 
-            .tagline {
-                display: block;
+            .about-content {
+                flex-direction: column;
             }
 
-            .parallax-banner {
-                height: 60vh;
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-item {
+                height: 300px;
             }
 
             .banner-content h2 {
+                font-size: 2.2rem;
+                padding: 0 20px;
+            }
+
+            h2 {
                 font-size: 2rem;
             }
-
-            .about-text {
-                font-size: 1rem;
-            }
-
-            .feature-item {
-                flex-direction: column;
-                gap: 5px;
+            
+            .language-switcher {
+                top: 15px;
+                right: 15px;
             }
         }
 
         @media (max-width: 480px) {
+            .parallax-banner {
+                height: 50vh;
+            }
+            
             .banner-content h2 {
                 font-size: 1.8rem;
             }
-
+            
             .logo h1 {
                 font-size: 1.5rem;
-            }
-
-            .logo-img {
-                width: 50px;
-                height: 50px;
-            }
-
-            section {
-                padding: 50px 0;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-links h4::after {
-                left: 50%;
-                transform: translateX(-50%);
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button class="lang-btn active" onclick="changeLanguage('en')" data-lang="en">EN</button>
-        <button class="lang-btn" onclick="changeLanguage('me')" data-lang="me">ME</button>
-        <button class="lang-btn" onclick="changeLanguage('ru')" data-lang="ru">RU</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="me">ME</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
     </div>
 
     <header>
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-img">
-                    <img src="images/logo.png" alt="Vinyl-M Logo">
-                </div>
-                <div>
-                    <h1>Vinyl-<span>M</span></h1>
-                    <p class="tagline">Professional Sound & Light Rental</p>
-                </div>
+                <h1>Vinyl-<span>M</span></h1>
             </div>
             
-            <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="option1.html">Sound</a></li>
-                    <li><a href="option2.html">Light</a></li>
-                    <li><a href="option3.html">Effects</a></li>
+                    <li><a href="index.html" class="active" data-lang="en">About</a><a href="index.html" class="active" data-lang="me" style="display:none">O nama</a><a href="index.html" class="active" data-lang="ru" style="display:none">О нас</a></li>
+                    <li><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="me" style="display:none">Galerija</a><a href="gallery.html" data-lang="ru" style="display:none">Галерея</a></li>
+                    <li><a href="option1.html" data-lang="en">Sound</a><a href="option1.html" data-lang="me" style="display:none">Zvuk</a><a href="option1.html" data-lang="ru" style="display:none">Звук</a></li>
+                    <li><a href="option2.html" data-lang="en">Light</a><a href="option2.html" data-lang="me" style="display:none">Svjetlo</a><a href="option2.html" data-lang="ru" style="display:none">Свет</a></li>
+                    <li><a href="option3.html" data-lang="en">Effects</a><a href="option3.html" data-lang="me" style="display:none">Efekti</a><a href="option3.html" data-lang="ru" style="display:none">Эффекты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Parallax Banner -->
-    <section class="parallax-banner" id="parallaxBanner">
+    <section class="parallax-banner">
         <div class="parallax-layer layer1"></div>
         <div class="parallax-layer layer2"></div>
         <div class="parallax-layer layer3"></div>
         <div class="banner-content">
-            <h2 id="bannerTitle">Premium Event Equipment Rental</h2>
-            <h2 id="bannerTitleME" style="display:none">Najam premium opreme za događaje</h2>
-            <h2 id="bannerTitleRU" style="display:none">Аренда премиального оборудования для мероприятий</h2>
+            <h2 data-lang="en">Premium Equipment Rental in Montenegro</h2>
+            <h2 data-lang="me" style="display:none">Premium najam opreme u Crnoj Gori</h2>
+            <h2 data-lang="ru" style="display:none">Аренда премиум оборудования в Черногории</h2>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <section id="about">
         <div class="container">
             <h2 data-lang="en">ABOUT US</h2>
             <h2 data-lang="me" style="display:none">O NAMA</h2>
             <h2 data-lang="ru" style="display:none">О НАС</h2>
             
-            <h3 data-lang="en">We sound loud. We shine bright.</h3>
-            <h3 data-lang="me" style="display:none">Zvučimo glasno. Svetlimo jako.</h3>
-            <h3 data-lang="ru" style="display:none">Мы звучим громко. Мы светим ярко.</h3>
+            <h3 data-lang="en" style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Elevating Sound, Illuminating Events</h3>
+            <h3 data-lang="me" style="text-align: center; margin-bottom: 30px; font-size: 1.8rem; display: none;">Unapređujemo zvuk, osvjetljavamo događaje</h3>
+            <h3 data-lang="ru" style="text-align: center; margin-bottom: 30px; font-size: 1.8rem; display: none;">Улучшаем звук, освещаем события</h3>
             
             <div class="about-content">
                 <div class="about-text">
-                    <p data-lang="en">Vinyl-M – Professional Sound and Lighting Equipment Rental in Montenegro</p>
-                    <p data-lang="me" style="display:none">Vinyl-M – Profesionalni najam zvučne i svjetlosne opreme u Crnoj Gori</p>
-                    <p data-lang="ru" style="display:none">Vinyl-M – Профессиональная аренда звукового и светового оборудования в Черногории</p>
+                    <p data-lang="en"><strong>Vinyl-M – Professional Sound and Lighting Equipment Rental in Montenegro</strong></p>
+                    <p data-lang="me" style="display:none"><strong>Vinyl-M – Profesionalni najam zvučne i svjetlosne opreme u Crnoj Gori</strong></p>
+                    <p data-lang="ru" style="display:none"><strong>Vinyl-M – Профессиональная аренда звукового и светового оборудования в Черногории</strong></p>
                     
                     <p data-lang="en">We provide high-quality sound and impressive lighting for events of any scale — from small private parties to large outdoor festivals.</p>
                     <p data-lang="me" style="display:none">Pružamo visokokvalitetan zvuk i impresivnu rasvjetu za događaje bilo koje veličine — od malih privatnih zabava do velikih festivala na otvorenom.</p>
                     <p data-lang="ru" style="display:none">Мы предоставляем высококачественный звук и впечатляющее освещение для мероприятий любого масштаба — от небольших частных вечеринок до крупных уличных фестивалей.</p>
                     
-                    <div class="features">
+                    <div class="feature-list">
                         <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check"></i>
                             <p data-lang="en"><strong>State-of-the-Art Equipment</strong> – Rental of professional audio systems, lighting fixtures, and stage equipment from top brands.</p>
                             <p data-lang="me" style="display:none"><strong>Najsavremenija oprema</strong> – Najam profesionalnih audio sistema, rasvjetnih tijela i scenografije od vrhunskih brendova.</p>
                             <p data-lang="ru" style="display:none"><strong>Современное оборудование</strong> – Аренда профессиональных аудиосистем, осветительных приборов и сценического оборудования от ведущих брендов.</p>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check"></i>
                             <p data-lang="en"><strong>Expert Team</strong> – Experienced sound engineers and technical specialists ensure flawless sound and visual support.</p>
                             <p data-lang="me" style="display:none"><strong>Stručni tim</strong> – Iskusni zvučni inženjeri i tehničari osiguravaju besprijekoran zvuk i vizuelnu podršku.</p>
                             <p data-lang="ru" style="display:none"><strong>Команда экспертов</strong> – Опытные звукорежиссеры и технические специалисты обеспечивают безупречный звук и визуальную поддержку.</p>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check"></i>
                             <p data-lang="en"><strong>Personalized Approach</strong> – We tailor solutions to fit your budget and event concept.</p>
                             <p data-lang="me" style="display:none"><strong>Personalizirani pristup</strong> – Prilagođavamo rješenja vašem budžetu i konceptu događaja.</p>
                             <p data-lang="ru" style="display:none"><strong>Индивидуальный подход</strong> – Мы адаптируем решения под ваш бюджет и концепцию мероприятия.</p>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check"></i>
                             <p data-lang="en"><strong>Full-Service Support</strong> – Delivery, installation, setup, and technical assistance throughout your event.</p>
                             <p data-lang="me" style="display:none"><strong>Potpuna podrška</strong> – Dostava, instalacija, postavljanje i tehnička pomoć tokom cijelog događaja.</p>
                             <p data-lang="ru" style="display:none"><strong>Полная поддержка</strong> – Доставка, установка, настройка и техническая помощь на протяжении всего мероприятия.</p>
@@ -727,129 +570,56 @@
         </div>
     </section>
 
-    <section class="gallery" id="gallery">
+    <section id="work" class="work">
         <div class="container">
-            <h2 data-lang="en">Gallery</h2>
-            <h2 data-lang="me" style="display:none">Galerija</h2>
-            <h2 data-lang="ru" style="display:none">Галерея</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Event 1">
-                    <div class="overlay">
+            <h2 data-lang="en">Our Equipment</h2>
+            <h2 data-lang="me" style="display:none">Naša oprema</h2>
+            <h2 data-lang="ru" style="display:none">Наше оборудование</h2>
+            
+            <div class="work-grid">
+                <!-- Concert Equipment -->
+                <div class="work-item">
+                    <img src="images/concert.jpg" alt="Concert Equipment">
+                    <div class="work-overlay">
+                        <h3 data-lang="en">Concert Equipment</h3>
+                        <h3 data-lang="me" style="display:none">Oprema za koncerte</h3>
+                        <h3 data-lang="ru" style="display:none">Концертное оборудование</h3>
+                        <p data-lang="en">Professional sound systems and lighting for concerts and live performances</p>
+                        <p data-lang="me" style="display:none">Profesionalni zvučni sistemi i rasvjeta za koncerte i live nastupe</p>
+                        <p data-lang="ru" style="display:none">Профессиональные звуковые системы и освещение для концертов и живых выступлений</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Event 2">
-                    <div class="overlay">
+                
+                <!-- Banquet Equipment -->
+                <div class="work-item">
+                    <img src="images/banquet.jpg" alt="Banquet Equipment">
+                    <div class="work-overlay">
+                        <h3 data-lang="en">Banquet Equipment</h3>
+                        <h3 data-lang="me" style="display:none">Oprema za bankete</h3>
+                        <h3 data-lang="ru" style="display:none">Банкетное оборудование</h3>
+                        <p data-lang="en">Elegant lighting and sound solutions for weddings and corporate events</p>
+                        <p data-lang="me" style="display:none">Elegantna rasvjeta i zvučna rješenja za vjenčanja i korporativne događaje</p>
+                        <p data-lang="ru" style="display:none">Элегантное освещение и звуковые решения для свадеб и корпоративных мероприятий</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Event 3">
-                    <div class="overlay">
+                
+                <!-- Festival Equipment -->
+                <div class="work-item">
+                    <img src="images/festival.jpg" alt="Festival Equipment">
+                    <div class="work-overlay">
+                        <h3 data-lang="en">Festival Equipment</h3>
+                        <h3 data-lang="me" style="display:none">Oprema za festivale</h3>
+                        <h3 data-lang="ru" style="display:none">Фестивальное оборудование</h3>
+                        <p data-lang="en">High-power sound and lighting systems for outdoor festivals and large events</p>
+                        <p data-lang="me" style="display:none">Jaki zvučni sistemi i rasvjeta za festivale na otvorenom i velike događaje</p>
+                        <p data-lang="ru" style="display:none">Мощные звуковые системы и освещение для уличных фестивалей и крупных мероприятий</p>
                     </div>
-               
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 data-lang="en">Contact Us</h2>
-            <h2 data-lang="me" style="display:none">Kontaktirajte nas</h2>
-            <h2 data-lang="ru" style="display:none">Свяжитесь с нами</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3 data-lang="en">Contact Information</h3>
-                    <h3 data-lang="me" style="display:none">Kontakt informacije</h3>
-                    <h3 data-lang="ru" style="display:none">Контактная информация</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Budva, Montenegro</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p><a href="tel:+38267439100">+382 67 439 100</a></p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:Vinylmbudva@gmail.com">Vinylmbudva@gmail.com</a></p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/198Ar6UoX1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3 data-lang="en">Send us a Message</h3>
-                    <h3 data-lang="me" style="display:none">Pošaljite nam poruku</h3>
-                    <h3 data-lang="ru" style="display:none">Отправьте нам сообщение</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required data-lang="en">
-                            <input type="text" placeholder="Vaše ime" required data-lang="me" style="display:none">
-                            <input type="text" placeholder="Ваше имя" required data-lang="ru" style="display:none">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required data-lang="en">
-                            <input type="email" placeholder="Vaš email" required data-lang="me" style="display:none">
-                            <input type="email" placeholder="Ваш email" required data-lang="ru" style="display:none">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required data-lang="en"></textarea>
-                            <textarea placeholder="Vaša poruka" required data-lang="me" style="display:none"></textarea>
-                            <textarea placeholder="Ваше сообщение" required data-lang="ru" style="display:none"></textarea>
-                        </div>
-                        <button type="submit" class="btn" data-lang="en">Send Message</button>
-                        <button type="submit" class="btn" data-lang="me" style="display:none">Pošalji poruku</button>
-                        <button type="submit" class="btn" data-lang="ru" style="display:none">Отправить</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Vinyl-M Logo">
-                <p data-lang="en">Professional Sound & Light Rental</p>
-                <p data-lang="me" style="display:none">Profesionalni najam zvuka i svjetla</p>
-                <p data-lang="ru" style="display:none">Профессиональная аренда звука и света</p>
-            </div>
-            <div class="footer-links">
-                <h4 data-lang="en">Quick Links</h4>
-                <h4 data-lang="me" style="display:none">Brzi linkovi</h4>
-                <h4 data-lang="ru" style="display:none">Быстрые ссылки</h4>
-                <ul>
-                    <li><a href="#about" data-lang="en">About Us</a></li>
-                    <li><a href="#about" data-lang="me">O nama</a></li>
-                    <li><a href="#about" data-lang="ru">О нас</a></li>
-                    <li><a href="gallery.html" data-lang="en">Gallery</a></li>
-                    <li><a href="gallery.html" data-lang="me">Galerija</a></li>
-                    <li><a href="gallery.html" data-lang="ru">Галерея</a></li>
-                    <li><a href="#contact" data-lang="en">Contact Us</a></li>
-                    <li><a href="#contact" data-lang="me">Kontaktirajte nas</a></li>
-                    <li><a href="#contact" data-lang="ru">Свяжитесь с нами</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4 data-lang="en">Services</h4>
-                <h4 data-lang="me" style="display:none">Usluge</h4>
-                <h4 data-lang="ru" style="display:none">Услуги</h4>
-                <ul>
-                    <li><a href="option1.html" data-lang="en">Sound Systems</a></li>
-                    <li><a href="option1.html" data-lang="me">Zvučni sistemi</a></li>
-                    <li><a href="option1.html" data-lang="ru">Аудиосистемы</a></li>
-                    <li><a href="option2.html" data-lang="en">Lighting</a></li>
-                    <li><a href="option2.html" data-lang="me">Rasvjeta</a></li>
-                    <li><a href="option2.html" data-lang="ru">Освещение</a></li>
-                    <li><a href="option3.html" data-lang="en">Special Effects</a></li>
-                    <li><a href="option3.html" data-lang="me">Specijalni efekti</a></li>
-                    <li><a href="option3.html" data-lang="ru">Спецэффекты</a></li>
-                </ul>
-            </div>
-             <section id="contact" class="compact-contact">
+    <section id="contact" class="compact-contact">
         <div class="container">
             <h2 data-lang="en">Contact Us</h2>
             <h2 data-lang="me" style="display:none">Kontaktirajte nas</h2>
@@ -915,6 +685,14 @@
                 });
             });
             
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+            });
+            
             // Initialize with English
             changeLanguage('en');
             
@@ -926,6 +704,14 @@
                 
                 if (layer2) layer2.style.transform = `translateY(${scrollPosition * 0.4}px)`;
                 if (layer3) layer3.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+            });
+            
+            // Set active menu item based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
             });
         });
         
