@@ -1,0 +1,434 @@
+ /* ============================================= */
+        /* GLOBAL STYLES */
+        /* ============================================= */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #e63946;
+            --dark-gray: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #dddddd;
+            --section-bg1: #f9f9f9;
+            --section-bg2: #ffffff;
+            --section-bg3: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================= */
+        /* LANGUAGE SWITCHER */
+        /* ============================================= */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+}
+
+.lang-btn {
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure buttons are displayed in a row */
+}
+
+.lang-btn:hover {
+    background-color: #333;
+}
+
+.lang-btn.active {
+    background-color: #333;
+}
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: var(--red);
+            font-weight: bold;
+        }
+
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ============================================= */
+        /* HEADER & NAVIGATION */
+        /* ============================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            white-space: nowrap;
+        }
+
+        .logo h1 span {
+            color: var(--red);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            display: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            font-weight: 500;
+            display: block;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        nav ul li a.active {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: var(--red);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        /* ============================================= */
+        /* PARALLAX BANNER */
+        /* ============================================= */
+        .parallax-banner {
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            transition: transform 0.1s ease-out;
+        }
+
+        .layer1 {
+            background-image: url('images/banner-layer1.jpg');
+            z-index: 1;
+        }
+
+        .layer2 {
+            background-image: url('images/banner-layer2.jpg');
+            z-index: 2;
+            transform: translateY(0);
+        }
+
+        .layer3 {
+            background-image: url('images/banner-layer3.jpg');
+            z-index: 3;
+            transform: translateY(0);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 4;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .banner-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ============================================= */
+        /* BUTTONS */
+        /* ============================================= */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn::after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.4s;
+            background-color: var(--red);
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+            }
+        }
+
+        /* ============================================= */
+        /* RESPONSIVE STYLES */
+        /* ============================================= */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav.active {
+                max-height: 500px;
+                padding: 20px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .parallax-banner {
+                height: 60vh;
+            }
+
+            .banner-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+
+            .logo-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+
+            .tagline {
+                font-size: 0.8rem;
+            }
+
+            .parallax-banner {
+                height: 50vh;
+            }
+
+            .banner-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Стили для секций */
+        .about-us {
+            background-color: var(--section-bg1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            background-color: var(--section-bg2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact {
+            background-color: var(--section-bg3);
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Анимация для изображений */
+        .gallery-images img,
+        .about-us-image img {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-images img:hover,
+        .about-us-image img:hover {
+            transform: scale(1.05);
+        }
