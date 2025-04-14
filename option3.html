@@ -91,18 +91,17 @@
         }
 
         
-        /* Переключатель языка */
-        .language-switcher {
-            position: fixed;
-            top: 150px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 5px;
-            border-radius: 5px;
-        }
+       .language-switcher {
+    position: absolute; /* Изменяем с fixed на absolute */
+    top: 150px; /* Отступ сверху, можно регулировать */
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+}
 
         .lang-btn {
             background: none;
