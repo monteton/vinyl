@@ -53,15 +53,19 @@
             display: none;
         }
 
-        /* Мобильное меню */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 5px;
-        }
+        /* Центрирование мобильного бургера */
+.mobile-menu-toggle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    color: #555;
+    z-index: 1001; /* Выше чем языковой переключатель */
+}
 
         nav ul {
             list-style: none;
