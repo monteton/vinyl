@@ -38,7 +38,7 @@
         /* Language Switcher */
         .language-switcher {
             position: fixed;
-            top: 150px;
+            top: 20px;
             right: 20px;
             z-index: 1000;
             display: flex;
@@ -82,12 +82,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            margin: 0 auto;
         }
 
         .logo h1 {
@@ -131,28 +133,16 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 101;
         }
 
-
-        .mobile-menu-toggle {
-            display: block;
-        }
-    
-       
-
-    
-        }
-        
-            .logo {
-                margin-right: 40px; /* Добавляем отступ для лого, чтобы компенсировать кнопку */
-            }
-        }
         /* Parallax Banner */
         .parallax-banner {
             height: 70vh;
             overflow: hidden;
             position: relative;
             margin-top: 0;
+            z-index: 1;
         }
 
         .parallax-layer {
@@ -165,7 +155,7 @@
         }
 
         .layer1 {
-            background-image: url('layer1.png');
+            background-image: url('images/layer1.png');
             z-index: 1;
         }
 
@@ -177,7 +167,7 @@
         }
 
         .layer3 {
-            background-image: url('images/layer3.png');
+            background-image: url('layer3.png');
             z-index: 3;
             transform: translateY(0);
             opacity: 0.5;
@@ -205,6 +195,8 @@
         /* Sections */
         section {
             padding: 60px 0;
+            position: relative;
+            z-index: 2;
         }
 
         h2 {
@@ -402,6 +394,8 @@
             color: var(--white);
             padding: 30px 0;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         /* Responsive Styles */
@@ -418,6 +412,7 @@
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: row;
+                justify-content: center;
             }
 
             .mobile-menu-toggle {
@@ -427,7 +422,11 @@
             nav {
                 display: none;
                 width: 100%;
-                order: 3;
+                background: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
 
             nav.open {
@@ -436,13 +435,13 @@
 
             nav ul {
                 flex-direction: column;
-                margin-top: 15px;
-                gap: 5px;
+                margin-top: 0;
+                gap: 0;
             }
 
             nav ul li a {
                 display: block;
-                padding: 12px;
+                padding: 12px 20px;
                 border-bottom: 1px solid var(--medium-gray);
             }
 
