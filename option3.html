@@ -92,11 +92,13 @@
 
         
        .language-switcher {
-    position: absolute; /* Изменяем с fixed на absolute */
-    top: 150px; /* Отступ сверху, можно регулировать */
+    position: absolute;
+    top: 150px;
     right: 20px;
     z-index: 1000;
     display: flex;
+    flex-direction: row; /* Явно задаем горизонтальное направление */
+    flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
     gap: 5px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 5px;
