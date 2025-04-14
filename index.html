@@ -123,14 +123,12 @@
 
         /* Mobile Menu Toggle */
        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--black);
-        }
-
+        display: block;
+        position: absolute; /* Позиционируем абсолютно */
+        right: 15px; /* Отступ справа */
+        top: 50%; /* Центрируем по вертикали */
+        transform: translateY(-50%); /* Точное центрирование */
+    }
         /* Parallax Banner */
         .parallax-banner {
             height: 70vh;
